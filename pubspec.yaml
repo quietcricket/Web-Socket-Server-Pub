@@ -1,0 +1,5 @@
+name: SimpleSocketServer
+description: A sample web application
+dependencies:
+  browser: any
+  http_server: any
