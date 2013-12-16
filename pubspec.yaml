@@ -1,5 +1,8 @@
-name: SimpleSocketServer
-description: A sample web application
-dependencies:
-  browser: any
-  http_server: any
+name: web_socket_server
+version: 0.0.3
+author: Shang Liang<shang@wewearglasses.com>
+description: WebSocket server workflow.
+homepage: https://github.com/boratlibre/Web-Socket-Server-Pub
+documentation: https://github.com/boratlibre/Web-Socket-Server-Pub
+environment:
+  sdk: '>=1.0.0'
