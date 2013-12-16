@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>WebSock Server Example</title>
+    <style>
+      #wrapper{
+        font-family:sans-serif;
+        width:300px;
+        margin:0 auto;
+      }
+      #chat{
+        background:#DDD;
+        height:400px;
+        padding:10px;
+        overflow:auto;
+      }
+      #message{
+        margin-top:10px;
+        width:295px;
+        font-size:14px;
+      }
+    </style>
+  </head>
+ 
+  <body>
+    <div id="wrapper">   
+      <div id="chat"></div>
+      <input type="text" id="message" placeholder="Message"/>
+    </div>
+    <script type="application/dart" src="frontend.dart"></script>
+  </body>
+</html>

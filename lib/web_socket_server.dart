@@ -40,6 +40,11 @@ class WebSocketServer{
   }
 
   /**
+   * Shortcut to have a default unsecured server
+   */
+  WebSocketServer():this.server();
+
+  /**
    * Construct an secure server
    * The parameters [address], [port], [certificateName] and [requestClientCertificate]
    * are identical as [HttpServer]'s bindSecure parameters
@@ -61,6 +66,7 @@ class WebSocketServer{
    * and start listen to incoming connections
    */
   void serverCreated(HttpServer server){
+    print("Server created: ${server.address.address}:${server.port}");
     server.transform(new WebSocketTransformer()).listen(connectionCreated);
   }
 
@@ -73,9 +79,6 @@ class WebSocketServer{
    *
    */
   void connectionCreated(WebSocket ws){
-    WebSocketConnection con=new WebSocketConnection();
-    socketConnectionMap[ws]=con;
-
     ws.listen(
         (String message){
           messageReceived(ws,message);
@@ -84,6 +87,18 @@ class WebSocketServer{
         onDone:(){
           connectionClosed(ws);
         });
+    addConnection(ws);
+  }
+
+  /**
+   * Create a [WebSocketConnection] instance to link up with the [WebSocket]
+   *
+   * Called from [connectionCreated] function.
+   * It is seprated out for override
+   */
+  void addConnection(WebSocket ws){
+    WebSocketConnection con=new WebSocketConnection();
+    socketConnectionMap[ws]=con;
   }
 
   /**

@@ -1,5 +1,5 @@
 name: web_socket_server
-version: 0.0.3
+version: 0.1.0
 author: Shang Liang<shang@wewearglasses.com>
 description: WebSocket server workflow.
 homepage: https://github.com/boratlibre/Web-Socket-Server-Pub
